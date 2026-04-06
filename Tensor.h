@@ -51,8 +51,8 @@ public:
     Tensor operator*(double n) const;
 
     //View y Unsqueeze
-    Tensor view(const std::vector<size_t>& new_shape) const;
-    Tensor unsqueeze(size_t position) const;
+    Tensor view(const std::vector<size_t>& new_shape);
+    Tensor unsqueeze(size_t position);
 
     //Concatenar
     static Tensor concat(const std::vector<Tensor>& tensors, size_t dim);
