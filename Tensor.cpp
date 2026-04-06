@@ -1,5 +1,4 @@
 #include "Tensor.h"
-#include <stdexcept>
 
 using namespace std;
 
