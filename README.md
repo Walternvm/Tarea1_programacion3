@@ -43,13 +43,17 @@ Después de compilar, ejecuta el programa:
 El programa implementa una red neuronal simple utilizando la clase Tensor, siguiendo los pasos especificados en la tarea.
 
 ## Descripción de la Red Neuronal
-La red neuronal implementada consta de las siguientes capas:
+La red neuronal implementada sigue el flujo completo de procesamiento de datos como se detalla en la siguiente tabla:
 
-1. **Entrada**: Tensor de 1000 × 20 × 20
-2. **View**: Transformación a 1000 × 400
-3. **Capa Lineal 1**: Multiplicación por matriz 400 × 100 + bias 1 × 100
-4. **ReLU**: Activación no lineal
-5. **Capa Lineal 2**: Multiplicación por matriz 100 × 10 + bias 1 × 10
-6. **Sigmoid**: Activación final
+| Paso | Operación | Dimensión resultante |
+|------|-----------|----------------------|
+| 1 | Tensor de entrada (datos crudos) | 1000 × 20 × 20 |
+| 2 | view | 1000 × 400 |
+| 3 | matmul con pesos W1 | 1000 × 100 |
+| 4 | Suma con bias b1 (1 × 100) | 1000 × 100 |
+| 5 | Activación ReLU | 1000 × 100 |
+| 6 | matmul con pesos W2 | 1000 × 10 |
+| 7 | Suma con bias b2 (1 × 10) | 1000 × 10 |
+| 8 | Activación Sigmoid | 1000 × 10 |
 
 El código en `main.cpp` demuestra el funcionamiento completo de la red neuronal.
